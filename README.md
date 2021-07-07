@@ -1,7 +1,29 @@
 # DPT
-DPT: Deformable Patch-based Transformer for Visual Recognition (ACM MM2021)
+--------
+This repo is the official implementation of **DPT: Deformable Patch-based Transformer for Visual Recognition (ACM MM2021)**. The paper will be released soon. We provide code and models for the following tasks:
 
-Please add the detailed information about this repository,like:
+> *Image Classification*: Instructions not ready.
+
+> *Object Detection*: Instructions not ready.
+
+## Introduction
+
+## Main Results
+
+### Image Classification
+| Method     | #Params (M) | Size | Acc@1 |
+|------------|:-----------:|:----:|:-----:|
+| DPT-Tiny   |        |  224 |   |
+| DPT-Small  |         |  224 |   |
+| DPT-Medium |         |  224 |   |
+
+## License
+This repository is released under the Apache 2.0 license as found in the [LICENSE](LICENSE) file.
+
+## Citation
+Citation will be provided once paper is released.
+
+## Original Content (It will be removed when README.md is fullfilled.)
 
 论文标题及链接
 
