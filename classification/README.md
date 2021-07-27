@@ -88,7 +88,9 @@ python -m torch.distributed.launch --nproc_per_node=8 --use_env main.py\
 | DPT-Small  |    26.4     |   4.0    | 81.0  |       |
 | DPT-Medium |    46.1     |   6.9    | 81.9  |       |
 
-Our model will be released soon.
+You can obtain the ImageNet1k pre-trained model from [BaiduNetdisk](https://pan.baidu.com/s/1nzfWr90_XP7Ruoj2hBJzLQ). Password for extract is **DPTs**.
+
+We will soon release it with Google Drive, too.
 
 ## License
 This repository is released under the Apache 2.0 license as found in the [LICENSE](LICENSE) file.
