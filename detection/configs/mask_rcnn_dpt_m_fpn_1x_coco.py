@@ -5,9 +5,9 @@ _base_ = [
     '../configs/_base_/default_runtime.py'
 ]
 model = dict(
-    pretrained='pretrained/depvt_small_st234_ptwh_w1n3.pth',
+    pretrained='pretrained/dpt_medium.pth',
     backbone=dict(
-        type='depvt_small_st234_ptwh_w1n3',
+        type='dpt_medium',
         style='pytorch'),
     neck=dict(
         type='FPN',

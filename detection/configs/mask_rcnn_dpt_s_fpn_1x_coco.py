@@ -1,23 +1,21 @@
 _base_ = [
-    '../configs/_base_/models/retinanet_r50_fpn.py',
-    '../configs/_base_/datasets/coco_detection.py',
+    '../configs/_base_/models/mask_rcnn_r50_fpn.py',
+    '../configs/_base_/datasets/coco_instance.py',
     # '../configs/_base_/schedules/schedule_1x.py',
     '../configs/_base_/default_runtime.py'
 ]
 model = dict(
-    pretrained='pretrained/tiny_st234_w10.pth',
+    pretrained='pretrained/dpt_small.pth',
     backbone=dict(
-        type='pvt_tiny_st234_w10',
+        type='dpt_small',
         style='pytorch'),
     neck=dict(
         type='FPN',
         in_channels=[64, 128, 320, 512],
         out_channels=256,
-        start_level=1,
-        add_extra_convs='on_input',
         num_outs=5))
 # optimizer
-optimizer = dict(type='AdamW', lr=0.0001, weight_decay=0.0001)
+optimizer = dict(type='AdamW', lr=0.0002, weight_decay=0.0001)
 optimizer_config = dict(grad_clip=None)
 # learning policy
 lr_config = dict(

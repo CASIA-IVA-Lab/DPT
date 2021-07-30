@@ -4,9 +4,9 @@ _base_ = [
 ]
 model = dict(
     type='DETR',
-    pretrained='pretrained/depvt_small_st234_ptwh_w1n3.pth',
+    pretrained='pretrained/dpt_small.pth',
     backbone=dict(
-        type='depvt_small_st234_ptwh_w1n3_f4',
+        type='dpt_small_f4',
         style='pytorch'),
     bbox_head=dict(
         type='TransformerHead',

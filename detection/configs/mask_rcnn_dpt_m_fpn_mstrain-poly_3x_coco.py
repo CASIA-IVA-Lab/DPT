@@ -1,26 +1,29 @@
 _base_ = [
-    '../configs/_base_/models/retinanet_r50_fpn.py',
-    '../configs/_base_/datasets/coco_detection.py',
+    '../configs/_base_/models/mask_rcnn_r50_fpn.py',
+    '../configs/_base_/datasets/coco_instance.py',
     # '../configs/_base_/schedules/schedule_1x.py',
     '../configs/_base_/default_runtime.py'
 ]
 model = dict(
-    pretrained='pretrained/depvt_medium_st234_ptwh_w1n3.pth',
+    pretrained='pretrained/dpt_medium.pth',
     backbone=dict(
-        type='depvt_medium_st234_ptwh_w1n3',
+        type='dpt_medium',
         style='pytorch'),
     neck=dict(
         type='FPN',
         in_channels=[64, 128, 320, 512],
         out_channels=256,
-        start_level=1,
-        add_extra_convs='on_input',
         num_outs=5))
+# multi-scale
 img_norm_cfg = dict(
     mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_rgb=True)
 train_pipeline = [
     dict(type='LoadImageFromFile'),
-    dict(type='LoadAnnotations', with_bbox=True),
+    dict(
+        type='LoadAnnotations',
+        with_bbox=True,
+        with_mask=True,
+        poly2mask=False),
     dict(
         type='Resize',
         img_scale=[(1333, 640), (1333, 672), (1333, 704), (1333, 736),
@@ -31,7 +34,7 @@ train_pipeline = [
     dict(type='Normalize', **img_norm_cfg),
     dict(type='Pad', size_divisor=32),
     dict(type='DefaultFormatBundle'),
-    dict(type='Collect', keys=['img', 'gt_bboxes', 'gt_labels']),
+    dict(type='Collect', keys=['img', 'gt_bboxes', 'gt_labels', 'gt_masks']),
 ]
 test_pipeline = [
     dict(type='LoadImageFromFile'),
@@ -53,7 +56,7 @@ data = dict(
     val=dict(pipeline=test_pipeline),
     test=dict(pipeline=test_pipeline))
 # optimizer
-optimizer = dict(type='AdamW', lr=0.0001, weight_decay=0.0001)
+optimizer = dict(type='AdamW', lr=0.0002, weight_decay=0.0001)
 optimizer_config = dict(grad_clip=None)
 # learning policy
 lr_config = dict(
