@@ -5,7 +5,7 @@ This repo is the official implementation of **DPT: Deformable Patch-based Transf
 
 > **Image Classification**: Detailed instruction and information see [classification/README.md](classification/README.md).
 
-> **Object Detection**: Instructions not ready.
+> **Object Detection**: Detailed instruction and information see [detection/README.md](detection/README.md).
 
 The papar has been relased on [[Arxiv](https://arxiv.org/abs/2107.14467)].
 
