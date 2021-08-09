@@ -28,7 +28,7 @@ Training commands and pretrained models are provided >>> [here](classification) 
 | DPT-Medium |    46.1     |   6.9    | 81.9  |
 
 ### Object Detection
-Coming soon.
+Training command and detailed results are provided >>> [here](detection) <<<.
 
 ## Citation
 ```
