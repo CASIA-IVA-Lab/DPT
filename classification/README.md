@@ -84,13 +84,11 @@ python -m torch.distributed.launch --nproc_per_node=8 --use_env main.py\
 
 | Method     | #Params (M) | FLOPs(G) | Acc@1 | Model |
 |------------|:-----------:|:--------:|:-----:|:-----:|
-| DPT-Tiny   |    15.2     |   2.1    | 77.4  |       |
-| DPT-Small  |    26.4     |   4.0    | 81.0  |       |
-| DPT-Medium |    46.1     |   6.9    | 81.9  |       |
+| DPT-Tiny   |    15.2     |   2.1    | 77.4  | [Google Drive](https://drive.google.com/file/d/1WkuanDQodRun1sJtZmnoUd6pJOpNMetm/view?usp=sharing) |
+| DPT-Small  |    26.4     |   4.0    | 81.0  | [Google Drive](https://drive.google.com/file/d/1uM4iRLnZ9Omdt_OSPr-aK0uy8rQ5iLjA/view?usp=sharing) |
+| DPT-Medium |    46.1     |   6.9    | 81.9  | [Google Drive](https://drive.google.com/file/d/1IoAJoN4VFEiDS17hSwXpTDHiJPivZdsu/view?usp=sharing) |
 
-You can obtain the ImageNet1k pre-trained model from [BaiduNetdisk](https://pan.baidu.com/s/1nzfWr90_XP7Ruoj2hBJzLQ). Password for extract is **DPTs**.
-
-We will soon release it with Google Drive, too.
+You can also obtain the ImageNet1k pre-trained model from [BaiduNetdisk](https://pan.baidu.com/s/1nzfWr90_XP7Ruoj2hBJzLQ). Password for extract is **DPTs**.
 
 ## License
 This repository is released under the Apache 2.0 license as found in the [LICENSE](LICENSE) file.
