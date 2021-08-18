@@ -87,7 +87,7 @@ class Simple_Patch(nn.Module):
         return self.get_output(img, pred_offset, img_size=(H, W), output_size=output_size), output_size
 
 class Simple_DePatch(Simple_Patch):
-    def __init__(self, box_coder, show_dim=4, use_auxiliary=-1, **kwargs):
+    def __init__(self, box_coder, show_dim=4, **kwargs):
         super().__init__(show_dim, **kwargs)
         self.box_coder = box_coder
         #self.register_buffer("value_spatial_shapes", torch.as_tensor([[self.img_size, self.img_size]], dtype=torch.long))
